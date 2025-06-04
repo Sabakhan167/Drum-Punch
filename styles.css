@@ -1,0 +1,310 @@
+/* Your provided CSS starts here */
+body {
+  margin: 0;
+  font-family: 'Negrita Pro', sans-seri; /* Note: 'sans-seri' might be a typo for 'sans-serif' */
+  background-color: #f5c518;
+}
+
+/* Style for the new overall page container */
+.site-wide-container {
+  width: 100%;
+  /* You could set a max-width here if you want to constrain the overall page width, e.g.: */
+  /* max-width: 1440px; */
+  /* margin: 0 auto; */ /* To center the container if max-width is set */
+  /* overflow: hidden; */ /* Optional: if child elements might unexpectedly overflow */
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: -2px 20px; /* Note: Negative padding is generally not standard CSS behavior */
+}
+
+.figma-hero-box { /* This class is used for header-nav in your HTML */
+  width: 1305px;
+  height: 636px;
+  margin-top: 47px;
+  /* top: 125px; */ /* 'top' has no effect without positioning (e.g., relative, absolute) */
+  /* left: 96px; */ /* 'left' has no effect without positioning */
+  margin-left: 44px;
+  background: #FFEBB5;
+  border: 3px solid #000000;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0px 0px #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.figma-hero-box img { /* This rule would apply if an img is inside .figma-hero-box */
+  width: 100%;
+  height: auto;
+}
+
+.header-container {
+  padding: 20px;
+}
+
+.header-wrapper {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header-nav { /* This element has the class .figma-hero-box applied in your HTML */
+  /* Styles from .figma-hero-box will apply here due to the class attribute */
+  /* Overriding or specific styles for header-nav if needed: */
+  width: 1158px; /* This overrides .figma-hero-box width */
+  height: 67px;  /* This overrides .figma-hero-box height */
+  /* margin-top, margin-left, background, border, border-radius, box-shadow, display, align-items, justify-content, overflow are inherited from .figma-hero-box */
+  justify-content: space-between; /* Specific to .header-nav */
+  padding: 0 40px;
+}
+
+.game-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500; /* This is overridden by the next font-weight rule */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-menu a:hover {
+  text-decoration: underline;
+}
+
+.social-wrapper {
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  top: 4px;
+  right: 2px;
+}
+
+.social-icon {
+  width: 67px;
+  height: 67px;
+  background: #FFEBB5;
+  border: 3px solid #000000;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0px 0px #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.social-icon.telegram {
+  margin-right: -180px;
+}
+
+.social-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 1400px) {
+  .header-nav { /* This applies to the element with class .figma-hero-box as well */
+    width: 90%;
+    margin-left: 20px;
+    padding: 0 20px;
+  }
+
+  .social-wrapper {
+    position: static;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .social-icon.telegram {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-menu {
+    gap: 15px;
+  }
+
+  .nav-menu a {
+    font-size: 20px;
+  }
+
+  .game-logo {
+    font-size: 28px; /* Typo? Larger than non-mq .game-logo. Kept as is. */
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px 5px;
+    min-height: 40vh;
+  }
+  .figma-hero-box { /* This applies to header-nav as well */
+    width: 98vw;
+    height: auto;
+    margin: 20px 1vw 0 1vw;
+    border-radius: 8px;
+  }
+  .header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-nav { /* This applies to the element with class .figma-hero-box as well */
+    width: 95%; /* Overrides .figma-hero-box width in this media query */
+    height: auto; /* Overrides .figma-hero-box height in this media query */
+    margin: 20px auto;
+    padding: 15px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .nav-menu a {
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+
+  .game-logo {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .social-wrapper {
+    flex-direction: row;
+    gap: 15px;
+    margin: 20px 0;
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-icon img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .main-content img { /* Styles the image directly inside .main-content */
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-nav { /* This applies to the element with class .figma-hero-box as well */
+    width: 100%; /* Overrides .figma-hero-box width in this media query */
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+  .nav-menu {
+    gap: 10px;
+  }
+
+  .nav-menu a {
+    font-size: 16px;
+  }
+
+  .game-logo {
+    font-size: 20px;
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .social-icon img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Styles for the scroller */
+.scroller-container {
+  width: 100%;
+  height: 40px;
+  background: #000000;
+  overflow: hidden;
+  position: relative; /* 'top' will work with this */
+  top: 823px; /* This might position it unexpectedly depending on other content flow. Kept as is. */
+}
+
+.scroller-content {
+  display: flex;
+  white-space: nowrap;
+  /* animation: scroll 20s linear infinite; */ /* Animation is commented out in your original CSS */
+}
+
+.scroller-content span {
+  font-family: 'Negrita Pro', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* For a continuous loop with duplicated content, -50% is common */
+  }
+}
+
+/* Media queries for scroller */
+@media (max-width: 1440px) { /* This rule was for 1440px in your CSS */
+  .scroller-container {
+    width: 100%;
+    top: auto; /* Resets the fixed 'top' value */
+    margin-top: 40px; /* Adds space from content above it */
+  }
+}
+
+@media (max-width: 768px) {
+  .scroller-container {
+    height: 36px;
+    top: auto;
+    margin-top: 40px;
+  }
+
+  .scroller-content span {
+    font-size: 20px;
+    padding: 6px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroller-content span {
+    font-size: 16px;
+  }
+}
